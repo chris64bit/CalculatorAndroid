@@ -1,10 +1,11 @@
 package id.chris64bit.calculatorandroid;
 // formatdesimal() http://stackoverflow.com/questions/703396/how-to-nicely-format-floating-numbers-to-string-without-unnecessary-decimal-0
 // this code is devolopment from http://agusharyanto.net
-//
+// memperbaiki view horisontal dgn scroll bar, membatasi input dengan 10 digit, menambahkan kapasitas jumlah perhitungan
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -13,10 +14,12 @@ public class MainActivity extends AppCompatActivity {
 
     public String str = "";
     Character op = 'q';
-    float i, num, numtemp;
+    // variabel i untuk limit input agar tidak melebihi batas integer
+    // num dan numtemp variable hasil
+    double i, num, numtemp;
     EditText showResult;
 
-    private static String formatDesimal(float f) {
+    private static String formatDesimal(double f) {
         if (f == (long) f) return String.format("%d", (long) f);
         else return String.format("%s", f);
     }
@@ -30,9 +33,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void insert(int j) {
-        str = str + Integer.toString(j);
-        num = Integer.valueOf(str).intValue();
-        showResult.setText(str);
+        // limitasi untuk max integer
+        if (i <= 999999999) {
+            str = str + Long.toString(j);
+            num = Long.valueOf(str).longValue();
+            i = num;
+            showResult.setText(str);
+            //Log.d("TAG:","i="+i+"| num="+num);
+        }
     }
 
     private void reset() {
@@ -40,16 +48,18 @@ public class MainActivity extends AppCompatActivity {
         op = 'q';
         num = 0;
         numtemp = 0;
+        i = 0;
         showResult.setText("");
     }
 
     private void perform() {
         //CharSequence chars = showResult.getText();
         //num = Integer.parseInt(chars.toString());
-        //Toast.makeText(MainActivity.this, "num"+num, Toast.LENGTH_SHORT).show();
+        i = 0;
         calc();
         str = "";
         numtemp = num;
+        num =0; // to avoid if plus btn press more than one time
     }
 
     private void calc() {
@@ -60,7 +70,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btn0Clicked(View v) {
-        insert(0);
+        if (num !=0)
+            insert(0);
     }
 
     public void btn1Clicked(View v) {
@@ -122,14 +133,12 @@ public class MainActivity extends AppCompatActivity {
     public void btnHasilClicked(View v) {
         calc();
         showResult.setText("" + formatDesimal(num));
-        //Toast.makeText(MainActivity.this, "numtemp=" + numtemp + "|num=" + num, Toast.LENGTH_SHORT).show();
         op = 'q';
         numtemp = 0;
-        //num =0;
+        //Log.d("TAG:","i="+i+"| num="+ num + "| numtemp=" + numtemp);
     }
 
     public void btnClearClicked(View v) {
         reset();
     }
-
 }

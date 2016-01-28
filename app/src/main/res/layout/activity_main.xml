@@ -9,159 +9,176 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="id.chris64bit.calculatorandroid.MainActivity">
 
-    <EditText
-        android:id="@+id/result_id"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:editable="false"
-        android:textColor="#ff0000"
-        android:textColorHighlight="#202020"
-        android:textSize="40dp" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/Btn7_id"
-        android:layout_width="60dp"
-        android:layout_height="70dp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/result_id"
-        android:onClick="btn7Clicked"
-        android:text="7" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/Btn8_id"
-        android:layout_width="60dp"
-        android:layout_height="70dp"
-        android:layout_below="@+id/result_id"
-        android:layout_toEndOf="@+id/Btn7_id"
-        android:onClick="btn8Clicked"
-        android:text="8" />
+            <EditText
+                android:id="@+id/result_id"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:editable="false"
+                android:textColor="#ff0000"
+                android:textColorHighlight="#202020"
+                android:textSize="40dp"/>
+        </LinearLayout>
 
-    <Button
-        android:id="@+id/Btn9_id"
-        android:layout_width="60dp"
-        android:layout_height="70dp"
-        android:layout_below="@+id/result_id"
-        android:layout_toEndOf="@+id/Btn8_id"
-        android:onClick="btn9Clicked"
-        android:text="9" />
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/scrollView" >
 
-    <Button
-        android:id="@+id/BtnClear"
-        android:layout_width="90dp"
-        android:layout_height="70dp"
-        android:layout_alignBottom="@+id/Btn9_id"
-        android:layout_toEndOf="@+id/Btn9_id"
-        android:onClick="btnClearClicked"
-        android:text="Clear" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/Btn4_id"
-        android:layout_width="60dp"
-        android:layout_height="70dp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/Btn7_id"
-        android:onClick="btn4Clicked"
-        android:text="4" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/Btn5_id"
-        android:layout_width="60dp"
-        android:layout_height="70dp"
-        android:layout_alignBottom="@+id/Btn4_id"
-        android:layout_toEndOf="@+id/Btn4_id"
-        android:onClick="btn5Clicked"
-        android:text="5" />
+                    <Button
+                        android:id="@+id/Btn7_id"
+                        android:layout_width="60dp"
+                        android:layout_height="70dp"
+                        android:onClick="btn7Clicked"
+                        android:text="7" />
 
-    <Button
-        android:id="@+id/Btn6_id"
-        android:layout_width="60dp"
-        android:layout_height="70dp"
-        android:layout_alignBottom="@+id/Btn5_id"
-        android:layout_toEndOf="@+id/Btn5_id"
-        android:onClick="btn6Clicked"
-        android:text="6" />
+                    <Button
+                        android:id="@+id/Btn8_id"
+                        android:layout_width="60dp"
+                        android:layout_height="70dp"
+                        android:onClick="btn8Clicked"
+                        android:text="8" />
 
-    <Button
-        android:id="@+id/Btn1_id"
-        android:layout_width="60dp"
-        android:layout_height="70dp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/Btn4_id"
-        android:onClick="btn1Clicked"
-        android:text="1" />
+                    <Button
+                        android:id="@+id/Btn9_id"
+                        android:layout_width="60dp"
+                        android:layout_height="70dp"
+                        android:onClick="btn9Clicked"
+                        android:text="9" />
 
-    <Button
-        android:id="@+id/Btn2_id"
-        android:layout_width="60dp"
-        android:layout_height="70dp"
-        android:layout_alignBottom="@+id/Btn1_id"
-        android:layout_toEndOf="@+id/Btn1_id"
-        android:onClick="btn2Clicked"
-        android:text="2" />
+                    <Button
+                        android:id="@+id/BtnClear_id"
+                        android:layout_width="90dp"
+                        android:layout_height="70dp"
+                        android:onClick="btnClearClicked"
+                        android:text="Clear" />
+                </LinearLayout>
 
-    <Button
-        android:id="@+id/Btn3_id"
-        android:layout_width="60dp"
-        android:layout_height="70dp"
-        android:layout_alignBottom="@+id/Btn2_id"
-        android:layout_toEndOf="@+id/Btn2_id"
-        android:onClick="btn3Clicked"
-        android:text="3" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/Btn0_id"
-        android:layout_width="60dp"
-        android:layout_height="70dp"
-        android:layout_below="@+id/Btn2_id"
-        android:layout_toEndOf="@+id/BtnBagi_id"
-        android:onClick="btn0Clicked"
-        android:text="0" />
+                    <Button
+                        android:id="@+id/Btn4_id"
+                        android:layout_width="60dp"
+                        android:layout_height="70dp"
+                        android:onClick="btn4Clicked"
+                        android:text="4" />
 
-    <Button
-        android:id="@+id/BtnPlus_id"
-        android:layout_width="90dp"
-        android:layout_height="70dp"
-        android:layout_alignBottom="@+id/Btn6_id"
-        android:layout_toEndOf="@+id/Btn6_id"
-        android:onClick="btnPlusClicked"
-        android:text="+" />
+                    <Button
+                        android:id="@+id/Btn5_id"
+                        android:layout_width="60dp"
+                        android:layout_height="70dp"
+                        android:onClick="btn5Clicked"
+                        android:text="5" />
 
-    <Button
-        android:id="@+id/BtnMin_id"
-        android:layout_width="90dp"
-        android:layout_height="70dp"
-        android:layout_alignBottom="@+id/Btn3_id"
-        android:layout_toEndOf="@+id/Btn3_id"
-        android:onClick="btnMinClicked"
-        android:text="-" />
+                    <Button
+                        android:id="@+id/Btn6_id"
+                        android:layout_width="60dp"
+                        android:layout_height="70dp"
+                        android:onClick="btn6Clicked"
+                        android:text="6" />
 
-    <Button
-        android:id="@+id/BtnHasil_id"
-        android:layout_width="90dp"
-        android:layout_height="70dp"
-        android:layout_below="@+id/BtnMin_id"
-        android:layout_toEndOf="@+id/BtnKali_id"
-        android:onClick="btnHasilClicked"
-        android:text="=" />
+                    <Button
+                        android:id="@+id/BtnPlus_id"
+                        android:layout_width="90dp"
+                        android:layout_height="70dp"
+                        android:onClick="btnPlusClicked"
+                        android:text="+" />
+                </LinearLayout>
 
-    <Button
-        android:id="@+id/BtnBagi_id"
-        android:layout_width="60dp"
-        android:layout_height="70dp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/Btn1_id"
-        android:onClick="btnBagiClicked"
-        android:text="/" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/BtnKali_id"
-        android:layout_width="60dp"
-        android:layout_height="70dp"
-        android:layout_alignBottom="@+id/Btn0_id"
-        android:layout_toEndOf="@+id/Btn0_id"
-        android:onClick="btnKaliClicked"
-        android:text="x" />
+                    <Button
+                        android:id="@+id/Btn1_id"
+                        android:layout_width="60dp"
+                        android:layout_height="70dp"
+                        android:onClick="btn1Clicked"
+                        android:text="1" />
+
+                    <Button
+                        android:id="@+id/Btn2_id"
+                        android:layout_width="60dp"
+                        android:layout_height="70dp"
+                        android:onClick="btn2Clicked"
+                        android:text="2" />
+
+                    <Button
+                        android:id="@+id/Btn3_id"
+                        android:layout_width="60dp"
+                        android:layout_height="70dp"
+                        android:onClick="btn3Clicked"
+                        android:text="3" />
+
+                    <Button
+                        android:id="@+id/BtnMin_id"
+                        android:layout_width="90dp"
+                        android:layout_height="70dp"
+                        android:onClick="btnMinClicked"
+                        android:text="-" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/BtnKali_id"
+                        android:layout_width="60dp"
+                        android:layout_height="70dp"
+                        android:onClick="btnKaliClicked"
+                        android:text="x" />
+
+                    <Button
+                        android:id="@+id/Btn0_id"
+                        android:layout_width="60dp"
+                        android:layout_height="70dp"
+                        android:onClick="btn0Clicked"
+                        android:text="0" />
+
+                    <Button
+                        android:id="@+id/BtnBagi_id"
+                        android:layout_width="60dp"
+                        android:layout_height="70dp"
+                        android:onClick="btnBagiClicked"
+                        android:text="/" />
+
+                    <Button
+                        android:id="@+id/BtnHasil_id"
+                        android:layout_width="90dp"
+                        android:layout_height="70dp"
+                        android:onClick="btnHasilClicked"
+                        android:text="=" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
 
 </RelativeLayout>
