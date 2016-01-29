@@ -70,8 +70,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btn0Clicked(View v) {
-        if (num !=0)
+        //Log.d("TAG","num="+num+"|str="+str);
+        //filter to only allow add single zero
+        if ((num==0) && str.equals("")){
             insert(0);
+        }else if (num !=0){
+            insert(0);
+        }
     }
 
     public void btn1Clicked(View v) {
@@ -134,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
         calc();
         showResult.setText("" + formatDesimal(num));
         op = 'q';
+        str = "";
         numtemp = 0;
         //Log.d("TAG:","i="+i+"| num="+ num + "| numtemp=" + numtemp);
     }
