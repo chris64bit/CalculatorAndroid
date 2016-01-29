@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         // limitasi untuk max integer
         if (i <= 999999999) {
             str = str + Long.toString(j);
-            num = Long.valueOf(str).longValue();
+            num = Long.valueOf(str);//.longValue();
             i = num;
             showResult.setText(str);
             //Log.d("TAG:","i="+i+"| num="+num);
